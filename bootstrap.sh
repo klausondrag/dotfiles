@@ -12,10 +12,9 @@ fi
 echo "Creating folders under ~/mine"
 mkdir -p ~/mine/src ~/mine/sync
 cp -r ./data/private ~/mine/
-cp -r ./data/bootstrap ~/mine/src/
 cp -r ./data/dotfiles ~/mine/src/
 
-echo "Installing KeepassXC and just"
+echo "Installing KeePassXC and just"
 sudo apt update
 sudo apt install -y keepassxc just
 
@@ -23,5 +22,5 @@ echo "Configuring keyboard input sources"
 gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'us'), ('xkb', 'de')]"
 
 echo "Finished. Please execute the following line to contine:"
-echo "cd ~/mine/src/bootstrap; just hello"
+echo "cd ~/mine/src/dotfiles; just hello"
 

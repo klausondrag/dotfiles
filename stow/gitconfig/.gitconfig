@@ -1,0 +1,30 @@
+[init]
+    defaultBranch = main
+[push]
+	default = simple
+[alias]
+	a = add
+	aa = add --all
+	s = status -sb
+	c = commit -m
+	ca = commit -a -m
+	ps = push
+	pl = pull
+	l = log --graph --pretty=format:'%C(red)%h%C(reset) %C(green)(%ci) %C(blue)<%an>%C(reset) %s %C(yellow)%d%C(reset)' --abbrev-commit
+	co = checkout
+	b = branch
+	d = diff
+	i = init
+	cl = clone
+	cl1 = clone --depth 1
+	m = merge
+[gpg]
+	program = gpg2
+[core]
+	editor = "subl -n -w"
+[user]
+	name = Klaus Ondrag
+	email = klaus.ondrag@outlook.com
+	signingkey = 9F1FBA5F98F5C176
+[commit]
+	gpgsign = true
