@@ -18,7 +18,7 @@ create-package:
 
 setup-basic: setup-paths setup-apt upgrade install-tools setup-zsh force-stow upgrade print-todo
 
-setup-laptop: setup-basic hostname configure-gtk setup-profile-pic setup-wallpaper install-fonts install-apps
+setup-laptop: setup-basic hostname configure-gtk setup-profile-pic setup-wallpaper install-fonts install-apps install-syncthing
 
 setup-full: setup-basic dev-dependencies dev-docker dev-dotnet dev-py dev-rust latex
 
@@ -215,6 +215,13 @@ _stow source destination *OPTIONS:
 
 install-fonts:
     fc-cache -f -v
+
+
+install-syncthing:
+    # https://github.com/flathub/io.github.martchus.syncthingtray/blob/master/README.md
+    flatpak install -y io.github.martchus.syncthingtray
+    mkdir -p $HOME/.config/autostart
+    ln -sf /var/lib/flatpak/app/io.github.martchus.syncthingtray/current/active/export/share/applications/io.github.martchus.syncthingtray.desktop $HOME/.config/autostart/
 
 
 print-todo:
