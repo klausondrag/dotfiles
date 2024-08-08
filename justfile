@@ -16,7 +16,9 @@ create-package:
     cp ./bootstrap.sh {{output}}
 
 
-setup-basic: hostname setup-paths configure-gtk setup-profile-pic setup-wallpaper setup-apt upgrade install-fonts install-tools install-apps setup-zsh force-stow upgrade print-todo
+setup-basic: setup-paths setup-apt upgrade install-tools setup-zsh force-stow upgrade print-todo
+
+setup-laptop: setup-basic hostname configure-gtk setup-profile-pic setup-wallpaper install-fonts install-apps
 
 setup-full: setup-basic dev-dependencies dev-docker dev-dotnet dev-py dev-rust latex
 
