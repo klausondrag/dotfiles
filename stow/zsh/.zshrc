@@ -12,6 +12,7 @@ antigen use oh-my-zsh
 antigen bundles <<EOBUNDLES
     git
     docker
+    docker-compose
     pip
     python
     virtualenv

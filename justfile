@@ -75,6 +75,8 @@ install-tools-nextgen-apt:
 
 
 install-tools-nextgen-cargo:
+    sudo nala install -y build-essential
+    # requires rust
     cargo install bottom broot du-dust exa fd-find git-delta jql navi procs pipe-rename ripgrep tokei
     cargo install --git https://github.com/ogham/dog dog
     cargo install --locked --all-features --git https://github.com/ms-jpq/sad --branch senpai
@@ -262,7 +264,7 @@ dev-py: dev-py-pyenv dev-py-poetry
 
 
 dev-py-pyenv:
-    curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
+    curl https://pyenv.run | bash
     pyenv --version
     pyenv install 3.12
 
@@ -275,6 +277,7 @@ dev-py-poetry:
 
 dev-dotnet:
     sudo nala install -y dotnet-sdk-7.0
+
 
 dev-rust:
     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
