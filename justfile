@@ -31,8 +31,11 @@ setup-paths:
 
 
 setup-apt:
-    sudo add-apt-repository -y --no-update universe
+    sudo add-apt-repository -y --no-update main universe restricted multiverse
+    sudo apt update
     sudo apt install nala
+    # If cannot be found: curl --proto '=https' --tlsv1.2 -sSf https://just.systems/install.sh | sudo bash -s -- --to /usr/bin/
+    sudo nala install -y just
 
 
 upgrade:
@@ -56,7 +59,7 @@ echo-tools:
 
 
 install-tools:
-    sudo nala install -y curl ffmpeg git gnupg2 just make stow tree wget
+    sudo nala install -y curl ffmpeg git gnupg2 make stow tree wget
     sudo nala install -y dconf-editor gnome-shell-extension-manager gnome-tweaks
     sudo nala install -y bat btop duf htop iftop jq neofetch nethogs radeontop rename s-tui
 
