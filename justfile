@@ -178,10 +178,17 @@ setup-zsh:
     chsh -s $(which zsh)
     sudo chsh -s $(which zsh)
 
+    curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh
+    # atuin login
+    # atuin import bash
+    # atuin import zsh
+    # atuin sync
+
 
 stow:
     # just _stow ./stow $HOME --restow
-    just _stow ../dotfiles-secrets/stow $HOME --restow
+    # just _stow ../dotfiles-secrets/stow $HOME --restow
+    # ll ~/.config/atuin; rm ~/.config/atuin/config.toml; ll ~/.config/atuin; stow --restow --dir=./stow --target=$HOME atuin; ll ~/.config/atuin
 
 
 unstow:
